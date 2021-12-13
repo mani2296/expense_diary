@@ -26,19 +26,14 @@ object personalexpense_diary {
         else if(user_input==3){
           val report=new diary
           report.mysqlquery()
-          
-          
-          }
+         }
         else{
           println("exiting")
           break
-        }
- 
-        
+          }
       }
     }
-   
-      }
+   }
 }
 class diary()
 {
@@ -47,8 +42,7 @@ class diary()
     val statement=con.createStatement()
     statement.executeUpdate(s"insert into tblexpense(expensename,expenseamount) values('$name',$amt)")
     println("data written to the expense table")
- 
-  }
+}
   def mysqlread()={
     val con=DriverManager.getConnection("jdbc:mysql://localhost/tempdb","root","Root123$")
     val statement=con.createStatement()
@@ -58,10 +52,8 @@ class diary()
       println("expense amount:"+expensedata.getInt("expenseamount"))
       println("expense date:"+expensedata.getTimestamp("expensedate"))
       println("==========")
-    
     }
     println("End")
- 
   }
   def mysqlquery()={
     
